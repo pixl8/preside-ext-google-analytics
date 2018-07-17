@@ -2,7 +2,8 @@
 <form i18nBaseUri="system-config.google-analytics:">
 	<tab>
 		<fieldset>
-			<field name="analytics_id" type="textinput" />
+			<field name="analytics_id" control="textinput" />
+			<field name="anonymize_ip" control="yesnoswitch" />
 		</fieldset>
 	</tab>
 </form>
