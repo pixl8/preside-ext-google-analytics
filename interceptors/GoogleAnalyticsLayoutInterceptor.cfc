@@ -9,10 +9,12 @@ component extends="coldbox.system.Interceptor" {
 		var layout = Trim( interceptData.layout ?: "" );
 
 		if ( Len( layout ) && layoutsToApply.findNoCase( layout ) ) {
-			var gaId = Trim( systemConfigurationService.getSetting( category="google-analytics", setting="analytics_id" ) );
+			var settings    = systemConfigurationService.getCategorySettings( "google-analytics" );
+			var gaId        = Trim( settings.analytics_id ?: "" );
+			var anonymizeIp = IsBoolean( settings.anonymize_ip ?: "" ) && settings.anonymize_ip;
 
 			if ( Len( gaId ) ) {
-				var gaScript = Trim( renderView( view="/general/_googleAnalyticsTags", args={ gaId=gaId, layout=layout } ) );
+				var gaScript = Trim( renderView( view="/general/_googleAnalyticsTags", args={ gaId=gaId, layout=layout, anonymizeIp=anonymizeIp } ) );
 
 				if ( Len( gaScript ) ) {
 					interceptData.renderedLayout = ( interceptData.renderedLayout ?: "" ).reReplaceNoCase( "<body(.*?)>", "<body\1>#chr(10)##gaScript#" );
