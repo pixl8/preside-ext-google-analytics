@@ -17,7 +17,7 @@ component extends="coldbox.system.Interceptor" {
 				var gaScript = Trim( renderView( view="/general/_googleAnalyticsTags", args={ gaId=gaId, layout=layout, anonymizeIp=anonymizeIp } ) );
 
 				if ( Len( gaScript ) ) {
-					interceptData.renderedLayout = ( interceptData.renderedLayout ?: "" ).reReplaceNoCase( "<body(.*?)>", "<body\1>#chr(10)##gaScript#" );
+					interceptData.renderedLayout = ( interceptData.renderedLayout ?: "" ).reReplaceNoCase( "<body(.*?(<!--.+-->.*?)?)>", "<body\1>#chr(10)##gaScript#" );
 				}
 			}
 		}
