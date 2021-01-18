@@ -1,8 +1,8 @@
 {
     "name":"PresideCMS Extension: Google Analytics",
     "type":"preside-extensions",
-    "version":"1.0.2",
-    "location":"https://github.com/pixl8/preside-ext-google-analytics/archive/v1.0.2.zip",
+    "version":"$VERSION_NUMBER",
+    "location":"$DOWNLOAD_URL",
     "private":false,
     "author":"Pixl8 Interactive",
     "directory":"application/extensions",
@@ -15,7 +15,7 @@
     "ignore":[
         ".git/*",
         ".gitignore",
-        ".gitlab-ci.yml",
+        ".github/*",
         ".twgit_features_subject"
     ]
 }
