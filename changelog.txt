@@ -1,0 +1,13 @@
+# Changelog
+
+## v1.0.3
+* Move build process to GitHub Actions
+* Delayed viewlets support for body tag
+
+## v1.0.1/v1.0.2
+
+* Add option to anonymize IPs
+
+## v1.0.0
+
+* Initial release
