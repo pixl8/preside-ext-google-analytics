@@ -1,5 +1,9 @@
 # Changelog
 
+## v1.0.4
+
+* Support nonce attribute on inline script tag to help with Content-Security-Policy
+
 ## v1.0.3
 * Move build process to GitHub Actions
 * Delayed viewlets support for body tag
